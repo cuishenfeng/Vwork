@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    html,body,h3,div{
+        margin:0;padding:0;
+        box-sizing: border-box;
+    }
+    ul,li{
+        margin:0;padding:0;
+        list-style: none;
+    }
+    body{
+        overflow: hidden;
+    }
+    header{
+        text-align: center;
+        width:100%;height:20%;
+        line-height: 20%;
+        border-bottom: 2px solid #4A4C4B;
+    }
+    h3{
+        text-align: center;
+        width:100vw;height:7vh;
+        line-height: 7vh;
+        border-bottom: 2px solid #4A4C4B;
+        color: #0a0a0a;
+    }
+    .left{
+        width:17vw;height:90vh;
+        float: left;
+        padding-left:3vw;
+        padding-top: 3vh;
+    }
+    .opt>li{
+        padding:15px 0;
+    }
+    .opt>li>a{
+        font-size: 18px;
+        color: #000;
+        text-decoration: none;
+    }
+    .opt>li>ul{
+        padding-left: 20px;
+    }
+    .opt .opt1 li{
+        padding:8px 0;
+    }
+    .opt1>li>a{
+        text-decoration: none;
+        color: #000;
+    }
+    .rigth{
+        width:80vw;height:93vh;
+        float: left;
+        border-left:2px solid #4A4C4B;
+    }
+    iframe{
+        width:100%;height:100%;
+    }
+</style>
+<body>
+<h3><%=user%>身份登录后台管理界面</h3>
+<div class="left">
+    <ul class="opt">
+        <li>
+            <a href="javascript:;">用户管理</a>
+            <ul class="opt1">
+                <li><a href="/admin/addUser" target="show">添加用户</a></li>
+                <li><a href="/admin/showUser" target="show">查看用户</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="javascript:;">内容管理</a>
+            <ul class="opt1">
+                <li><a href="/admin/addCon" target="show">添加内容</a></li>
+                <li><a href="/admin/showCon" target="show">查看内容</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<div class="rigth">
+    <iframe src="" frameborder="0" name="show">
+
+    </iframe>
+</div>
+</body>
+</html>

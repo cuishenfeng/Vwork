@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>查看用户</title>
+    <link rel="stylesheet" href="/css/mui.min.css">
+</head>
+<style>
+    html,body{
+        background: transparent;
+    }
+    table,tr,th,td{
+        border:1px solid #000;
+        border-collapse: collapse;
+    }
+    th,td{
+        width:150px;height:20px;
+        line-height: 20px;
+        text-align: center;
+    }
+    table{
+        margin:30px auto;
+    }
+</style>
+<body>
+<table>
+    <tr>
+        <th>用户名</th>
+        <th>密码</th>
+        <th>联系电话</th>
+        <th>权限级别</th>
+        <th>操作</th>
+    </tr>
+    <%for(var i=0;i<result.length;i++){%>
+        <%if(result[i].uroot!=0){%>
+        <tr>
+            <td><%=result[i].uname%></td>
+            <td><%=result[i].upass%></td>
+            <td><%=result[i].uphone%></td>
+            <td>
+                <%if(result[i].uroot==1){%>
+                高级用户
+                <%}else if(result[i].uroot==2){%>
+                普通用户
+                <%}%>
+            </td>
+            <td>
+                <a href="/admin/delUser/<%=result[i].uid%>">删除</a>
+                <a href="/admin/edit/<%=result[i].uid%>">编辑</a>
+            </td>
+        </tr>
+        <%}%>
+    <%}%>
+</table>
+</body>
+</html>

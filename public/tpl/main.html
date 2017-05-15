@@ -1,0 +1,41 @@
+<style>
+    .mui-content{
+        margin-bottom: 50px;
+    }
+    .mui-title img{
+        width:80px;
+        margin-top: 4px;
+    }
+    .mui-pull-left img{
+        width:30px;
+        margin-top: 4px;
+    }
+</style>
+<header class="mui-bar mui-bar-nav">
+
+    <a class="mui-pull-left" href="#!/">
+        <img src="/img/map.png" alt="">
+        {{city}}
+    </a>
+    <h1 class="mui-title">
+        <img src="/img/vw.png" alt="">
+    </h1>
+</header>
+<div class="mui-content">
+
+    <ul class="mui-table-view">
+        <li class="mui-table-view-cell mui-media" id="one" ng-repeat="item in data">
+            <a href="#!/list?{{item.url}}">
+                <img class="mui-media-object mui-pull-right" src="{{item.img}}">
+                <div class="mui-media-body">
+                    {{item.title}}
+                    <p class="mui-ellipsis">
+                        {{item.info}}
+                    </p>
+                </div>
+            </a>
+        </li>
+    </ul>
+</div>
+
+

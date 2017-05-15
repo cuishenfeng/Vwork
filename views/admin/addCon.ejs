@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="widtd=device-widtd, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    form{
+        margin:auto;
+    }
+    table,tr,td{
+        border:1px solid #000;
+        border-collapse: collapse;
+    }
+    tr{
+        text-align: center;
+    }
+    button{
+        width:60px;height:30px;
+        margin-top: 20px;
+    }
+</style>
+<body>
+<form action="/admin/addCons">
+<table>
+    <tr>
+        <td>标题</td>
+        <td><input type="text" name="title"></td>
+    </tr>
+    <tr>
+        <td>url</td>
+        <td><input type="url" name="url"></td>
+    </tr>
+    <tr>
+        <td>简介</td>
+        <td><input type="text" name="info"></td>
+    </tr>
+    <tr>
+        <td>缩略图</td>
+        <td>
+            <input type="url" name="img">
+        </td>
+    </tr>
+    <tr>
+        <td>分类</td>
+        <td>
+            <select name="catid">
+                <option value="2">科技前沿</option>
+                <option value="3">天文航天</option>
+                <option value="4">生命奥秘</option>
+                <option value="5">自然地理</option>
+                <option value="6">考古发现</option>
+                <option value="7">奇闻奇观</option>
+            </select>
+        </td>
+    </tr>
+</table>
+    <button type="submit">提交</button>
+</form>
+</body>
+</html>

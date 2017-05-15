@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/mui.min.css">
+    <style>
+        body{
+            background: transparent;
+        }
+        form{
+            margin:auto;
+            width:400px;height:auto;
+        }
+        .limt{
+            width:100%;padding:0 20px;
+            font-size: 16px;
+            color: #000;
+        }
+        .limt p{
+            margin:10px 0;
+        }
+        .limt span{
+            margin-right:10px;
+        }
+        .mui-button-row{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<form class="mui-input-group" action="/admin/edit" method="post">
+    <div class="mui-input-row">
+        <label>用户名</label>
+        <input type="text" class="mui-input-clear" value="<%=result[0].uname%>" name="uname">
+    </div>
+    <div class="mui-input-row">
+        <label>密码</label>
+        <input type="password" class="mui-input-password" value="<%=result[0].upass%>" name="upass">
+    </div>
+    <div class="mui-input-row">
+        <label>联系电话</label>
+        <input type="tel" class="mui-input-clear" value="<%=result[0].uphone%>" name="uphone">
+    </div>
+
+    <div class="limt">
+        <p>权限级别:</p>
+        <input type="radio" value="0" name="uroot" <%if(result[0].uroot==0){%> checked <%}%>><span>后台管理员</span>
+        <input type="radio" value="1" name="uroot" <%if(result[0].uroot==1){%> checked <%}%>><span>高级用户</span>
+        <input type="radio" value="2" name="uroot" <%if(result[0].uroot==2){%> checked <%}%>><span>普通用户</span>
+    </div>
+    <div class="mui-button-row">
+        <button type="submit" class="mui-btn mui-btn-primary" >确认</button>
+    </div>
+</form>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<style>
+    .mui-table-view-cell{
+        position: relative;
+    }
+    .mui-navigate-right{
+        position: relative;
+        background:#fff;
+        border-bottom: 1px solid #ccc;
+    }
+    .view-animate {
+        transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.5s;
+        position: absolute;
+        width:100%;
+    }
+    .view-animate.ng-enter, .view-animate.ng-leave {
+        display:block;
+        top:0px;
+    }
+    .view-animate.ng-enter {
+        top:100%;
+    }
+    .view-animate.ng-enter.ng-enter-active {
+        top:0px;
+    }
+    .view-animate.ng-leave.ng-leave-active {
+        top:-100%;
+    }
+</style>
+<header class="mui-bar mui-bar-nav">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" href="javascript:;" onclick="history.back()"></a>
+    <h1 class="mui-title">日志</h1>
+</header>
+
+<div class="mui-content">
+    <ul class="mui-table-view">
+        <li class="mui-table-view-cell">
+            <a class="mui-navigate-right" href="#!/send">发送的日志</a>
+        </li>
+        <li class="mui-table-view-cell">
+            <a class="mui-navigate-right" href="#!/jieshou">接收的日志</a>
+        </li>
+        <li class="mui-table-view-cell">
+            <a class="mui-navigate-right" href="#!/write">写日志</a>
+        </li>
+    </ul>
+</div>

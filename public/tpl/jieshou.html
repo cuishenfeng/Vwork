@@ -1,0 +1,27 @@
+<header class="mui-bar mui-bar-nav">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" href="#!/log"></a>
+    <h1 class="mui-title">已接收的日志</h1>
+</header>
+
+
+<div class="mui-content" style="background: #fff">
+    <button type="button" class="mui-btn mui-btn-success" ng-click="allFun()">全部日志</button>
+
+    <button type="button" class="mui-btn mui-btn-success" ng-click="duFun()">已读日志</button>
+
+    <button type="button" class="mui-btn mui-btn-danger" ng-click="unFun()">未读日志</button>
+
+    <ul class="mui-table-view">
+
+        <li class="mui-table-view-cell" ng-repeat="item in un">
+            <a href="#!/logshow/{{item.id}}"> {{item.title}}</a>
+            <span class="mui-badge">未读</span>
+        </li>
+
+        <li class="mui-table-view-cell" ng-repeat="item in du">
+            <a href="#!/logshow/{{item.id}}"> {{item.title}}</a>
+        </li>
+
+    </ul>
+
+</div>

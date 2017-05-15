@@ -1,0 +1,63 @@
+<style>
+    .mui-table-view-cell{
+        position: relative;
+    }
+    .del{
+        font-size: 14px;
+        padding:4px;
+        background: red;
+        border-radius: 5px;
+        color: #fff;
+        position: absolute;
+        right:15px;top:6px;
+        margin:auto;
+    }
+    .mui-navigate-right{
+        position: relative;
+        z-index:100;
+        background:#fff;
+        border-bottom: 1px solid #ccc;
+    }
+    .view-animate {
+        transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.5s;
+        position: absolute;
+        width:100%;
+
+    }
+
+    .view-animate.ng-enter, .view-animate.ng-leave {
+        display:block;
+        top:0px;
+    }
+
+    .view-animate.ng-enter {
+        top:100%;
+    }
+    .view-animate.ng-enter.ng-enter-active {
+        top:0px;
+
+    }
+    .view-animate.ng-leave.ng-leave-active {
+
+        top:-100%;
+    }
+
+</style>
+
+<header class="mui-bar mui-bar-nav">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" href="javascript:;" onclick="history.back()"></a>
+    <h1 class="mui-title">代办事项</h1>
+    <a class=" mui-icon mui-icon-compose mui-pull-right" href="#!/todocon"></a>
+</header>
+
+<div class="mui-content">
+<ul class="mui-table-view">
+    <li class="mui-table-view-cell" ng-repeat="item in data">
+        <a href="#!/todoinfo/{{$index}}" class="mui-navigate-right">
+            {{item}}
+        </a>
+        <span class="del" ng-click="del($index)">删除</span>
+    </li>
+
+</ul>
+</div>

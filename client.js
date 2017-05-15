@@ -4,7 +4,7 @@ var async=require("async");
 var cheerio=require("cheerio");
 var read=require("./read");
 
-//写入到数据库里面   首先先获取到分类   ->李彪
+//写入到数据库里面   首先先获取到分类
 
 async.waterfall([
     //获取分类

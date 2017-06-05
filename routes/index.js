@@ -2,8 +2,8 @@ var express=require("express");
 var path=require("path");
 var nodegrass=require("nodegrass");
 var body=require("body-parser");
-var mysql=require("../mysql");
-var md5=require("../md5");
+var mysql=require("../server/mysql");
+var md5=require("../server/md5");
 var router=express.Router();
 
 router.get("/",function(req,res,next){
@@ -20,7 +20,7 @@ router.get("/",function(req,res,next){
 
 
 router.get("/indexData",function(req,res){
-        mysql.query("select * from shows where catid=2 order by id desc limit 0,10",function(error,result){
+        mysql.query("select * from shows order by id desc limit 0,10",function(error,result){
             res.send(result);
         });
 })

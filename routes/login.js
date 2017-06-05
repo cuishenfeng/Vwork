@@ -1,8 +1,8 @@
 var express=require("express");
 var path=require("path");
 var body=require("body-parser");
-var mysql=require("../mysql");
-var md5=require("../md5");
+var mysql=require("../server/mysql");
+var md5=require("../server/md5");
 var router=express.Router();
 var session=require("express-session");
 

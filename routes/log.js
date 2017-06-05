@@ -1,6 +1,6 @@
 var express=require("express");
 var path=require("path");
-var mysql=require("../mysql");
+var mysql=require("../server/mysql");
 var router=express.Router();
 
 //发送日志

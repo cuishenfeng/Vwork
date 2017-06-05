@@ -8,7 +8,9 @@ angular.module("Controllers",["services"])
        // console.log($scope.data);
     })
 
-
+    var mySwiper = new Swiper('.swiper-container',{
+        loop : false,
+    })
     function myFun(result){
         var cityName = result.name;
         $scope.city=cityName;
@@ -84,7 +86,7 @@ angular.module("Controllers",["services"])
     $http({url:"/getCon",params:{url:Object.keys($location.$$search)[0]},responseType:"text"}).then(function(e){
 
         $scope.data=e.data;
-         console.log($scope.data);
+         // console.log($scope.data);
         document.querySelector(".con").innerHTML=($scope.data);
     })
 }]).controller("log",["$scope","$location","$http",function($scope,$location,$http){
@@ -158,9 +160,9 @@ angular.module("Controllers",["services"])
             url: "/editPass",
             params: {oldPass: $scope.oldPass, newPass: $scope.newPass, newPass1: $scope.newPass1}
         }).then(function (e) {
-            console.log(e.data)
+            // console.log(e.data)
             if(e.data=="no"){
-                console.log(1)
+                // console.log(1)
                 $scope.oldPass="";
                 $scope.newPass="";
                 $scope.newPass1="";
@@ -170,7 +172,7 @@ angular.module("Controllers",["services"])
                     $scope.$apply();
                 },1500)
             }else if(e.data=="ok"){
-                console.log(2)
+                // console.log(2)
                 location.href="/login";
             }
         })
